@@ -45,5 +45,66 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-p {
-  color: red; }
+body {
+  background-image: url(concrete_seamless.png);
+  font-family: Helvetica, Verdana, sans-serif; }
+
+.container {
+  background-color: rgba(240, 240, 240, 0.2);
+  border: solid 1px #DDD;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 20px 0;
+  text-align: center; }
+  .container h1 {
+    font-size: 2em; }
+
+.contenders {
+  overflow: auto;
+  margin: 20px 0; }
+
+.contender {
+  background-color: #FFF;
+  padding: 30px 0;
+  width: 45%; }
+  .contender .sprite {
+    background-image: url(nes-final-fantasy-trans.png);
+    background-size: 800%;
+    margin: 10px auto;
+    height: 90px;
+    width: 60px; }
+  .contender .info {
+    margin: 20px 0; }
+
+.bad-guy {
+  float: right; }
+
+.good-guy {
+  float: left; }
+
+.good-guy .sprite {
+  transform: scaleX(-1); }
+
+.good-guy .hurt {
+  background-position: -805px 0; }
+
+.good-guy .dead {
+  background-size: 500%;
+  background-position: -350px 0;
+  width: 87px; }
+
+.bad-guy .sprite {
+  background-position: -5px 94px; }
+
+.bad-guy .hurt {
+  background-position: -805px 94px; }
+
+.bad-guy .dead {
+  background-size: 500%;
+  background-position: -350px 94px;
+  width: 87px;
+  transform: scaleX(-1); }
+
+.messaging {
+  clear: both;
+  padding: 20px; }

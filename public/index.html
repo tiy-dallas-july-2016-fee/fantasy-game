@@ -5,14 +5,53 @@
   <head>
     <meta charset="utf-8">
     <title>Fantasy Game</title>
+    <link href="style.css" rel="stylesheet" />
   </head>
 
   <body>
 
-    <h1>Hai!</h1>
+    <div class="container">
+
+      <h1>Fantasy Fight</h1>
+
+      <div class="contenders">
+
+        <div class="contender good-guy">
+          <div class="sprite">
+          </div>
+          <div class="info">
+          </div>
+        </div>
+
+        <div class="contender bad-guy">
+          <div class="sprite">
+          </div>
+          <div class="info">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="messaging">
+        Ready to go!
+      </div>
+
+      <button class="start-button">start</button>
+
+
+
+    </div>
+
+    <script type="text/html" id="dude-info-template">
+      <div class="name"><%= name %></div>
+      <div class="hit-points"><%= hp %></div>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="ns.js"></script>
+    <script src="character-generator.js"></script>
+    <script src="script.js"></script>
     <script>Fantasy.start();</script>
   </body>
 
