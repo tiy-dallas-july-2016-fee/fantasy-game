@@ -27,6 +27,27 @@ console.log('script.js');
 
   var roundCount = 0;
 
+  function endOfBattle() {
+    clearInterval(intervalId); //no more rounds
+    $messaging.text('Game over!');
+
+    $.ajax({
+      url: '/api/leaderboard',
+      method: 'POST',
+      data: {
+        guy1Name: guy1.name,
+        guy1Hp: guy1.hp,
+        guy2Name: guy2.name,
+        guy2Hp: guy2.hp
+      }
+    })
+    .done(function(result) {
+      console.log('POST done', result);
+    });
+
+    //send data to server
+  }
+
   function doRound() {
     roundCount += 1;
     console.log('round', roundCount);
@@ -42,8 +63,6 @@ console.log('script.js');
       $('.good-guy .sprite').addClass('hurt');
     }
 
-
-
     damage = Math.floor(Math.random() * 3);
     guy2.hp -= damage;
 
@@ -55,13 +74,11 @@ console.log('script.js');
       $('.bad-guy .sprite').addClass('hurt');
     }
 
-
     updateCombatantDisplay();
 
     //intervalId
     if (guy1.hp < 1 || guy2.hp < 1) {
-      clearInterval(intervalId);
-      $messaging.text('Game over!');
+      endOfBattle();
     }
   }
 
